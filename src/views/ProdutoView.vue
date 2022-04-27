@@ -44,7 +44,7 @@ export default {
     }
   },
   async mounted(){
-    await axios.get(`http://localhost:5000/api/produtos/${this.$route.params.idProduto}`)
+    await axios.get(`https://vercel.com/felipeltavares/loja-teste-backend/api/vue/produtos/${this.$route.params.idProduto}`)
     .then( resp => {
       const produto = resp.data[0];
       this.prodUrl = produto.fotos[0].url;

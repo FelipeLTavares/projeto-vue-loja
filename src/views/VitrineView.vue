@@ -36,7 +36,7 @@ export default {
     async getImagens(){
       this.carregando = true;
 
-      await axios.get('http://localhost:5000/api/')
+      await axios.get('https://vercel.com/felipeltavares/loja-teste-backend/api/vue/')
       .then(resp => {
         this.camisas = resp.data.camisas;
         this.calcas = resp.data.calcas;
