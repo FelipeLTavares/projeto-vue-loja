@@ -24,11 +24,11 @@
         <h3>Faixa de Preço:</h3>
         <div class="ProdFilVal">
           <label>Menor que: </label>
-          <input name='valormenor' type='number' class='ProdFilValInp' step='10' placeholder='Menor ou Igual a:' v-model="valorMenor" />
+          <input name='valormenor' type='number' class='ProdFilValInp' step='10' placeholder='Menor ou Igual a:' v-model="valorMenor" v-on:keyup.enter="postFiltro"/>
         </div>
         <div class="ProdFilVal">
           <label>Maior que: </label>
-          <input name='valormaior' type='number' class='ProdFilValInp' step='10' placeholder='Maior ou Igual a:' v-model="valorMaior" />
+          <input name='valormaior' type='number' class='ProdFilValInp' step='10' placeholder='Maior ou Igual a:' v-model="valorMaior" v-on:keyup.enter="postFiltro"/>
         </div>
       </div>
       <button class='ProdFiltroBotao' @click="postFiltro">Filtrar</button>
@@ -82,7 +82,6 @@ export default {
         valormaior: this.valorMaior,
         tipos: tiposs
       }
-      console.log(dados)
 
       //Executart a requisição e setar a resposta
       await axios({
@@ -90,7 +89,7 @@ export default {
         url: 'https://loja-teste-backend.vercel.app/api/vue/produtos/',
         data: dados
       })
-      .then( resp => {this.produtos = resp.data; console.log(resp.data)} )
+      .then( resp => this.produtos = resp.data )
       .catch( err => console.log(err) )
     },   
     funcMostrarFiltro(){
