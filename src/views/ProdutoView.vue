@@ -44,7 +44,7 @@ export default {
     }
   },
   async mounted(){
-    await axios.get(`https://vercel.com/felipeltavares/loja-teste-backend/api/vue/produtos/${this.$route.params.idProduto}`)
+    await axios.get(`https://loja-teste-backend.vercel.app/api/vue/produtos/${this.$route.params.idProduto}`)
     .then( resp => {
       const produto = resp.data[0];
       this.prodUrl = produto.fotos[0].url;
@@ -134,6 +134,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+  }
 }
 </style>

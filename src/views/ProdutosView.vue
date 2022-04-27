@@ -87,7 +87,7 @@ export default {
       //Executart a requisição e setar a resposta
       await axios({
         method: 'post',
-        url: 'https://vercel.com/felipeltavares/loja-teste-backend/api/vue/produtos/',
+        url: 'https://loja-teste-backend.vercel.app/api/vue/produtos/',
         data: dados
       })
       .then( resp => {this.produtos = resp.data; console.log(resp.data)} )

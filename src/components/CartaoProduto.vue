@@ -25,7 +25,7 @@ export default {
     srcProd: String,
     altProd: String,
     nomeProd: String,
-    valorProd: String
+    valorProd: Number
   },
   mounted() {
     this.linkProduto = `/produtos/${this.idProd}`

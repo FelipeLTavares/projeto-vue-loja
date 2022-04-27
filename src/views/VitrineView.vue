@@ -36,11 +36,10 @@ export default {
     async getImagens(){
       this.carregando = true;
 
-      await axios.get('https://vercel.com/felipeltavares/loja-teste-backend/api/vue/')
+      await axios.get('https://loja-teste-backend.vercel.app/api/vue')
       .then(resp => {
         this.camisas = resp.data.camisas;
         this.calcas = resp.data.calcas;
-        console.log(this.camisas)
       })
       .catch(err => console.log(err));
 
@@ -66,9 +65,5 @@ export default {
   width: 50px;
   height: 50px;
   display: block;
-}
-
-@media only screen and (max-width: 600px) {
-  
 }
 </style>
